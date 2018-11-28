@@ -36,58 +36,60 @@ import javax.xml.bind.annotation.XmlTransient;
 @XmlRootElement
 public class Account implements Serializable {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
-    private double radius;
+    private String accountName;
+    private String accountType;
+    private int sortCode;
+    private int currentBalance;
 
-    /**
-     * @return the id
-     */
-    public int getCustomer() {
+    public Account(int id, String accountName, String accountType, int sortCode, int currentBalance) {
+        this.id = id;
+        this.accountName = accountName;
+        this.accountType = accountType;
+        this.sortCode = sortCode;
+        this.currentBalance = currentBalance;
+    }
+
+    public int getId() {
         return id;
     }
-
-    /**
-     * @return the name
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * @return the radius
-     */
-    public double getUser() {
-        return radius;
-    }
-
-    /**
-     * @param id the id to set
-     */
+    
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * @param name the name to set
-     */
-    public void setName(String name) {
-        this.name = name;
+    public String getAccountName() {
+        return accountName;
     }
 
-    /**
-     * @param user the user to set
-     */
-    public void setUser(double user) {
-        this.radius = user;
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
-    
 
-   
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public int getSortCode() {
+        return sortCode;
+    }
+
+    public void setSortCode(int sortCode) {
+        this.sortCode = sortCode;
+    }
+
+    public int getCurrentBalance() {
+        return currentBalance;
+    }
+
+    public void setCurrentBalance(int currentBalance) {
+        this.currentBalance = currentBalance;
+    }
+
 }
-
-    
-    

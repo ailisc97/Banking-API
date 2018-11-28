@@ -34,24 +34,23 @@ import javax.xml.namespace.QName;
 @XmlSeeAlso({Transaction.class})
 
 public class Customer implements Serializable {
-    
-    public Customer(){
+
+    public Customer() {
         trans = new ArrayList<>();
-          
-         
+
     }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public int id;
-    
-    @OneToMany(targetEntity=Transaction.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy="user")
+
+    @OneToMany(targetEntity = Transaction.class, cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     private List<Transaction> trans;
 
     public void setTransactions(List<Transaction> employeelist) {
         this.trans = employeelist;
     }
-    
-    @XmlElementWrapper(name="transactions")
+
+    @XmlElementWrapper(name = "transactions")
     @XmlElementRef()
     public List<Transaction> getTransactions() {
         return trans;
@@ -61,13 +60,13 @@ public class Customer implements Serializable {
     public String toString() {
         return "Customer{" + "id=" + id + ", transactions=" + trans + '}';
     }
-    
-    public static void main(String[] arges) throws PropertyException, JAXBException{
+
+    public static void main(String[] arges) throws PropertyException, JAXBException {
         StringWriter stringWriter = new StringWriter();
 
         JAXBContext ctx = JAXBContext.newInstance(Customer.class);
         Marshaller msh = ctx.createMarshaller();
-    msh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+        msh.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
         msh.marshal(new Customer(), System.out);
     }
