@@ -7,12 +7,12 @@
    
    <persistence-unit name="test-connection" transaction-type="RESOURCE_LOCAL">
    
-      <class>com.mycompany.mavenproject1.Planet</class>
+      <class>com.mycompany.mavenproject1.Account</class>
       <class>com.mycompany.mavenproject1.Transaction</class>
       <class>com.mycompany.mavenproject1.User</class>
       
       <properties>
-         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/bank"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/bankdata"/>
          <property name="javax.persistence.jdbc.user" value="root"/>
          <property name="javax.persistence.jdbc.password" value="Kingcarmo1"/>
          <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
