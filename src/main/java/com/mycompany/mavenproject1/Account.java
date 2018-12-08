@@ -16,14 +16,18 @@ public class Account implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String name;
     private int userNum;
+    private String name;
+    private int age;
+    private int phoneNo;
     private String accountType;
     private int houseNo;
     private String streetName;
     private String town;
     private String city;
     private int eircode;
+    private int balance;
+    private int sortcode;
 
     public int getId() {
         return id;
@@ -39,6 +43,22 @@ public class Account implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getPhoneNo() {
+        return phoneNo;
+    }
+
+    public void setPhoneNo(int phoneNo) {
+        this.phoneNo = phoneNo;
     }
 
     public int getUserNum() {
@@ -65,6 +85,14 @@ public class Account implements Serializable {
         this.houseNo = houseNo;
     }
 
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
     public String getTown() {
         return town;
     }
@@ -89,11 +117,22 @@ public class Account implements Serializable {
         this.eircode = eircode;
     }
 
-    public String getStreetName() {
-        return streetName;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setStreetName(String streetName) {
-        this.streetName = streetName;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
+
+    public int getSortcode() {
+        return sortcode;
+    }
+
+    public void setSortcode(int sortcode) {
+        this.sortcode = sortcode;
+    }
+    
+    
+
 }
